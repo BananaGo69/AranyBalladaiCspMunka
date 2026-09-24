@@ -3,7 +3,6 @@ const Answer1Btn = document.getElementById("KvizGomb1");
 const Answer2Btn = document.getElementById("KvizGomb2");
 const Answer3Btn = document.getElementById("KvizGomb3");
 const Answer4Btn = document.getElementById("KvizGomb4");
-const AnswerBtns = document.querySelectorAll("KvizValaszok");
 const Reset = document.getElementById("KvizUjraGomb");
 const Question = document.getElementById("KvizKerdes");
 const Cim = document.getElementById("KvizCim");
@@ -41,10 +40,10 @@ NextKvizBtn.addEventListener("click", function(){
     QNum++;
     Cim.innerText=`${QNum+1}. kérdés.`;
     Question.innerText=Questions[QNum].Que;
-    Answer1Btn.innerText=Questions[QNum].A1;
-    Answer2Btn.innerText=Questions[QNum].A2;
-    Answer3Btn.innerText=Questions[QNum].A3;
-    Answer4Btn.innerText=Questions[QNum].A4;
+    Answer1Btn.value=Questions[QNum].A1;
+    Answer2Btn.value=Questions[QNum].A2;
+    Answer3Btn.value=Questions[QNum].A3;
+    Answer4Btn.value=Questions[QNum].A4;
     Answer1Btn.style.backgroundColor="white";
     Answer2Btn.style.backgroundColor="white";
     Answer3Btn.style.backgroundColor="white";
@@ -61,10 +60,10 @@ Reset.addEventListener("click", function(){
     QNum=0;
     Cim.innerText=`${QNum+1}. kérdés.`;
     Question.innerText=Questions[QNum].Que;
-    Answer1Btn.innerText=Questions[QNum].A1;
-    Answer2Btn.innerText=Questions[QNum].A2;
-    Answer3Btn.innerText=Questions[QNum].A3;
-    Answer4Btn.innerText=Questions[QNum].A4;
+    Answer1Btn.value=Questions[QNum].A1;
+    Answer2Btn.value=Questions[QNum].A2;
+    Answer3Btn.value=Questions[QNum].A3;
+    Answer4Btn.value=Questions[QNum].A4;
     Answer1Btn.style.backgroundColor="white";
     Answer2Btn.style.backgroundColor="white";
     Answer3Btn.style.backgroundColor="white";
@@ -78,6 +77,20 @@ Reset.addEventListener("click", function(){
 let NotAnswered = true;
 let Points = 0;
 Answer1Btn.addEventListener("click", function(){
+Check();
+})
+Answer2Btn.addEventListener("click", function(){
+Check();
+})
+Answer3Btn.addEventListener("click", function(){
+Check();
+})
+Answer4Btn.addEventListener("click", function(){
+Check();
+})
+
+
+function Check(){
 if (NotAnswered) {
     Visszajel.innerText=Questions[QNum].R;
     switch (Questions[QNum].CA) {
@@ -87,7 +100,6 @@ if (NotAnswered) {
         Answer3Btn.style.backgroundColor="Red";
         Answer4Btn.style.backgroundColor="Red";
         NotAnswered = false;
-        Points++;
         break;
     case Questions[QNum].A2:
         Answer1Btn.style.backgroundColor="Red";
@@ -116,124 +128,5 @@ if (NotAnswered) {
     }
     
 }
-})
-Answer2Btn.addEventListener("click", function(){
-if (NotAnswered) {
-    Visszajel.innerText=Questions[QNum].R;
-    switch (Questions[QNum].CA) {
-    case Questions[QNum].A1:
-        Answer1Btn.style.backgroundColor="Green";
-        Answer2Btn.style.backgroundColor="Red";
-        Answer3Btn.style.backgroundColor="Red";
-        Answer4Btn.style.backgroundColor="Red";
-        NotAnswered = false;
-        break;
-    case Questions[QNum].A2:
-        Answer1Btn.style.backgroundColor="Red";
-        Answer2Btn.style.backgroundColor="Green";
-        Answer3Btn.style.backgroundColor="Red";
-        Answer4Btn.style.backgroundColor="Red";
-        NotAnswered = false;
-        Points++;
-        break;
-    case Questions[QNum].A3:
-        Answer1Btn.style.backgroundColor="Red";
-        Answer2Btn.style.backgroundColor="Red";
-        Answer3Btn.style.backgroundColor="Green";
-        Answer4Btn.style.backgroundColor="Red";
-        NotAnswered = false;
-        break;
-    case Questions[QNum].A4:
-        Answer1Btn.style.backgroundColor="Red";
-        Answer2Btn.style.backgroundColor="Red";
-        Answer3Btn.style.backgroundColor="Red";
-        Answer4Btn.style.backgroundColor="Green";
-        NotAnswered = false;
-        break;
-    default:
-        alert("Oh it's the wrong number, the wrong number song! We're very very sorry that we got it wrong!");
-        break;
-    }
 }
-})
-Answer3Btn.addEventListener("click", function(){
-if (NotAnswered) {
-    Visszajel.innerText=Questions[QNum].R;
-    switch (Questions[QNum].CA) {
-    case Questions[QNum].A1:
-        Answer1Btn.style.backgroundColor="Green";
-        Answer2Btn.style.backgroundColor="Red";
-        Answer3Btn.style.backgroundColor="Red";
-        Answer4Btn.style.backgroundColor="Red";
-        NotAnswered = false;
-        break;
-    case Questions[QNum].A2:
-        Answer1Btn.style.backgroundColor="Red";
-        Answer2Btn.style.backgroundColor="Green";
-        Answer3Btn.style.backgroundColor="Red";
-        Answer4Btn.style.backgroundColor="Red";
-        NotAnswered = false;
-        break;
-    case Questions[QNum].A3:
-        Answer1Btn.style.backgroundColor="Red";
-        Answer2Btn.style.backgroundColor="Red";
-        Answer3Btn.style.backgroundColor="Green";
-        Answer4Btn.style.backgroundColor="Red";
-        NotAnswered = false;
-        Points++;
-        break;
-    case Questions[QNum].A4:
-        Answer1Btn.style.backgroundColor="Red";
-        Answer2Btn.style.backgroundColor="Red";
-        Answer3Btn.style.backgroundColor="Red";
-        Answer4Btn.style.backgroundColor="Green";
-        NotAnswered = false;
-        break;
-    default:
-        alert("Oh it's the wrong number, the wrong number song! We're very very sorry that we got it wrong!");
-        break;
-    }
-}
-})
-Answer4Btn.addEventListener("click", function(){
-if (NotAnswered) {
-    Visszajel.innerText=Questions[QNum].R;
-    switch (Questions[QNum].CA) {
-    case Questions[QNum].A1:
-        Answer1Btn.style.backgroundColor="Green";
-        Answer2Btn.style.backgroundColor="Red";
-        Answer3Btn.style.backgroundColor="Red";
-        Answer4Btn.style.backgroundColor="Red";
-        NotAnswered = false;
-        break;
-    case Questions[QNum].A2:
-        Answer1Btn.style.backgroundColor="Red";
-        Answer2Btn.style.backgroundColor="Green";
-        Answer3Btn.style.backgroundColor="Red";
-        Answer4Btn.style.backgroundColor="Red";
-        NotAnswered = false;
-        break;
-    case Questions[QNum].A3:
-        Answer1Btn.style.backgroundColor="Red";
-        Answer2Btn.style.backgroundColor="Red";
-        Answer3Btn.style.backgroundColor="Green";
-        Answer4Btn.style.backgroundColor="Red";
-        NotAnswered = false;
-        break;
-    case Questions[QNum].A4:
-        Answer1Btn.style.backgroundColor="Red";
-        Answer2Btn.style.backgroundColor="Red";
-        Answer3Btn.style.backgroundColor="Red";
-        Answer4Btn.style.backgroundColor="Green";
-        NotAnswered = false;
-        Points++;
-        break;
-    default:
-        alert("Oh it's the wrong number, the wrong number song! We're very very sorry that we got it wrong!");
-        break;
-    }
-}
-})
-
-
 
