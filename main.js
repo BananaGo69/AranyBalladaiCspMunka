@@ -49,7 +49,7 @@ NextKvizBtn.addEventListener("click", function(){
     Answer3Btn.style.backgroundColor="white";
     Answer4Btn.style.backgroundColor="white";
     Visszajel.innerText="";
-    NotAnswered = true
+    NotAnswered = true;
     }
     
     
@@ -71,6 +71,7 @@ Reset.addEventListener("click", function(){
     Visszajel.innerText="";
     VegPont.innerText="";
     Points=0;
+    NotAnswered = true
 })
 
 
