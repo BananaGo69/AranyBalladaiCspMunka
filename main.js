@@ -30,37 +30,36 @@ NextKvizBtn.addEventListener("click", function(){
 })
 
 AnswerBtns.addEventListener("click", function(){
-
+    switch (Questions[QNum].CA) {
+        case A1:
+            Answer1Btn.classList.add(Correct);
+            Answer2Btn.classList.add(Wrong);
+            Answer3Btn.classList.add(Wrong);
+            Answer4Btn.classList.add(Wrong);
+            break;
+        case A2:
+            Answer1Btn.classList.add(Wrong);
+            Answer2Btn.classList.add(Correct);
+            Answer3Btn.classList.add(Wrong);
+            Answer4Btn.classList.add(Wrong);
+            break;
+        case A3:
+            Answer1Btn.classList.add(Wrong);
+            Answer2Btn.classList.add(Wrong);
+            Answer3Btn.classList.add(Correct);
+            Answer4Btn.classList.add(Wrong);
+            break;
+        case A4:
+            Answer1Btn.classList.add(Wrong);
+            Answer2Btn.classList.add(Wrong);
+            Answer3Btn.classList.add(Wrong);
+            Answer4Btn.classList.add(Correct);
+            break;
+        default:
+            alert("Oh it's the wrong number, the wrong number song! We're very very sorry that we got it wrong!");
+            break;
+    }
 })
 
 
 
-switch (Questions[QNum].CA) {
-    case A1:
-        Answer1Btn.classList.add(Correct);
-        Answer2Btn.classList.add(Wrong);
-        Answer3Btn.classList.add(Wrong);
-        Answer4Btn.classList.add(Wrong);
-        break;
-    case A2:
-        Answer1Btn.classList.add(Wrong);
-        Answer2Btn.classList.add(Correct);
-        Answer3Btn.classList.add(Wrong);
-        Answer4Btn.classList.add(Wrong);
-        break;
-    case A3:
-        Answer1Btn.classList.add(Wrong);
-        Answer2Btn.classList.add(Wrong);
-        Answer3Btn.classList.add(Correct);
-        Answer4Btn.classList.add(Wrong);
-        break;
-    case A4:
-        Answer1Btn.classList.add(Wrong);
-        Answer2Btn.classList.add(Wrong);
-        Answer3Btn.classList.add(Wrong);
-        Answer4Btn.classList.add(Correct);
-        break;
-    default:
-        alert("Oh it's the wrong number, the wrong number song! We're very very sorry that we got it wrong!");
-        break;
-}
