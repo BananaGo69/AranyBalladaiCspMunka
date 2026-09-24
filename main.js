@@ -8,6 +8,8 @@ const Reset = document.getElementById("KvizUjraGomb");
 const Question = document.getElementById("KvizKerdes");
 const Cim = document.getElementById("KvizCim");
 const KvizDiv = document.getElementById("KvizDiv");
+const VegPont = document.getElementById("VegPont");
+const Visszajel = document.getElementById("Visszajel");
 let QNum = 0;
 
 const Questions = [
@@ -33,8 +35,11 @@ Start();
 
 
 NextKvizBtn.addEventListener("click", function(){
+    if (QNum==5) {
+        VegPont.innerText=`Végső pontszám: ${Points}/${QNum+1}`;
+    } else {
     QNum++;
-    
+    Cim.innerText=`${QNum+1}. kérdés.`;
     Question.innerText=Questions[QNum].Que;
     Answer1Btn.innerText=Questions[QNum].A1;
     Answer2Btn.innerText=Questions[QNum].A2;
@@ -44,15 +49,15 @@ NextKvizBtn.addEventListener("click", function(){
     Answer2Btn.style.backgroundColor="white";
     Answer3Btn.style.backgroundColor="white";
     Answer4Btn.style.backgroundColor="white";
+    Visszajel.innerText="";
     NotAnswered = true
-    if (QNum==5) {
-        KvizDiv.innerHTML=`<p>Pontszám: ${Points}/${QNum+1}`;
     }
     
     
 })
 
 Reset.addEventListener("click", function(){
+    
     QNum=0;
     Cim.innerText=`${QNum+1}. kérdés.`;
     Question.innerText=Questions[QNum].Que;
@@ -60,6 +65,9 @@ Reset.addEventListener("click", function(){
     Answer2Btn.innerText=Questions[QNum].A2;
     Answer3Btn.innerText=Questions[QNum].A3;
     Answer4Btn.innerText=Questions[QNum].A4;
+    Visszajel.innerText="";
+    VegPont.innerText="";
+    Points=0;
 })
 
 
@@ -67,6 +75,7 @@ let NotAnswered = true;
 let Points = 0;
 Answer1Btn.addEventListener("click", function(){
 if (NotAnswered) {
+    Visszajel.innerText=Questions[QNum].R;
     switch (Questions[QNum].CA) {
     case Questions[QNum].A1:
         Answer1Btn.style.backgroundColor="Green";
@@ -101,10 +110,12 @@ if (NotAnswered) {
         alert("Oh it's the wrong number, the wrong number song! We're very very sorry that we got it wrong!");
         break;
     }
+    
 }
 })
 Answer2Btn.addEventListener("click", function(){
 if (NotAnswered) {
+    Visszajel.innerText=Questions[QNum].R;
     switch (Questions[QNum].CA) {
     case Questions[QNum].A1:
         Answer1Btn.style.backgroundColor="Green";
@@ -143,6 +154,7 @@ if (NotAnswered) {
 })
 Answer3Btn.addEventListener("click", function(){
 if (NotAnswered) {
+    Visszajel.innerText=Questions[QNum].R;
     switch (Questions[QNum].CA) {
     case Questions[QNum].A1:
         Answer1Btn.style.backgroundColor="Green";
@@ -181,6 +193,7 @@ if (NotAnswered) {
 })
 Answer4Btn.addEventListener("click", function(){
 if (NotAnswered) {
+    Visszajel.innerText=Questions[QNum].R;
     switch (Questions[QNum].CA) {
     case Questions[QNum].A1:
         Answer1Btn.style.backgroundColor="Green";
