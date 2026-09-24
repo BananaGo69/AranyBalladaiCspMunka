@@ -2,7 +2,7 @@
     padding: 0;
     margin: 0;
     width: 100%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: sans-serif;
 }
 
 
@@ -22,6 +22,7 @@ header{
     text-align: center;
     box-shadow: 0 1 2;
     padding: 20px;
+    
 }
 
 section{
@@ -37,6 +38,7 @@ section{
 
 p{
     padding: 7px;
+    font-size: large;
 }
 
 a{
@@ -54,6 +56,11 @@ ul{
     padding-left: 20px;
 }
 
+#jellemzok{
+    font-size: 15px;
+    list-style: circle;
+}
+
 img{
     width: 350px;
     margin: 0 auto 0 auto;
@@ -62,26 +69,36 @@ img{
 
 div{
     box-shadow: 0 4 5;
-    padding: 10px ;
+    
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    row-gap: 50px;
+    row-gap: 30px;
     box-shadow: 2 5 8;
     border-radius: 15px;
+    
 }
 
 #LeftDiv{
+
+    
     width: 30%;
     
 }
 
 #RightDiv{
+    
+    padding-left: 50px;
+    padding-right: 50px;
     background-color: whitesmoke;
-    width: 40%; 
+    width: 60%; 
 }
 
 #Cim.a{
     font-size: 30px;
     font-weight: bold;
+}
+
+#kvizek{
+    padding: 1;
 }
