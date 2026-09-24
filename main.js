@@ -24,10 +24,10 @@ const Questions = [
 function Start() {
     Cim.innerText=`${QNum+1}. kérdés.`;
     Question.innerText=Questions[QNum].Que;
-    Answer1Btn.innerText=Questions[QNum].A1;
-    Answer2Btn.innerText=Questions[QNum].A2;
-    Answer3Btn.innerText=Questions[QNum].A3;
-    Answer4Btn.innerText=Questions[QNum].A4;
+    Answer1Btn.value=Questions[QNum].A1;
+    Answer2Btn.value=Questions[QNum].A2;
+    Answer3Btn.value=Questions[QNum].A3;
+    Answer4Btn.value=Questions[QNum].A4;
 }
 Start();
 
@@ -65,6 +65,10 @@ Reset.addEventListener("click", function(){
     Answer2Btn.innerText=Questions[QNum].A2;
     Answer3Btn.innerText=Questions[QNum].A3;
     Answer4Btn.innerText=Questions[QNum].A4;
+    Answer1Btn.style.backgroundColor="white";
+    Answer2Btn.style.backgroundColor="white";
+    Answer3Btn.style.backgroundColor="white";
+    Answer4Btn.style.backgroundColor="white";
     Visszajel.innerText="";
     VegPont.innerText="";
     Points=0;
